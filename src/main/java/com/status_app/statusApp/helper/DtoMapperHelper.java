@@ -12,6 +12,8 @@ import java.util.List;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface DtoMapperHelper {
 
+    IncidentEntity toIncidentEntity(IncidentDTO incidentDTO);
+
 	ServiceDTO toServiceDTO(ServiceEntity serviceEntity);
 
 	List<ServiceDTO> toServiceDTOs(List<ServiceEntity> serviceEntities);

@@ -9,4 +9,5 @@ public interface StatusAppService {
 
     public List<ServiceDTO> getServices();
     public List<IncidentDTO> getIncidents();
+    public boolean createIncident(IncidentDTO incident);
 }
