@@ -1,8 +1,10 @@
 package com.status_app.statusApp.helper;
 
 import com.status_app.statusApp.dto.IncidentDTO;
+import com.status_app.statusApp.dto.IncidentUpdateDTO;
 import com.status_app.statusApp.dto.ServiceDTO;
 import com.status_app.statusApp.entity.IncidentEntity;
+import com.status_app.statusApp.entity.IncidentUpdateEntity;
 import com.status_app.statusApp.entity.ServiceEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
@@ -21,4 +23,12 @@ public interface DtoMapperHelper {
 	IncidentDTO toIncidentDTO(IncidentEntity incidentEntity);
 
 	List<IncidentDTO> toIncidentDTOs(List<IncidentEntity> incidentEntities);
+
+	IncidentUpdateDTO toIncidentUpdateDTO(IncidentUpdateEntity incidentUpdateEntity);
+
+	List<IncidentUpdateDTO> toIncidentUpdateDTOLists(List<IncidentUpdateEntity>incidentUpdateEntities);
+
+	IncidentUpdateEntity toIncidentUpdateEntity(IncidentUpdateDTO incidentUpdateDTO);
+
+	List<IncidentUpdateEntity> toIncidentUpdateEntities(List<IncidentUpdateDTO> incidentUpdateLists);
 }
