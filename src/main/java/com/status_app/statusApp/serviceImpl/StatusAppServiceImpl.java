@@ -60,4 +60,16 @@ public class StatusAppServiceImpl implements StatusAppService {
         return null;
     }
 
+    @Override
+    public boolean createIncident(IncidentDTO incident) {
+        try {
+            IncidentEntity incidentEntity = dtoMapperHelper.toIncidentEntity(incident);
+            incidentRepository.save(incidentEntity);
+            return true;
+        } catch(Exception e) {
+            logger.error("issue while creating incident {}", e);
+            return false;
+        }
+    }
+
 }

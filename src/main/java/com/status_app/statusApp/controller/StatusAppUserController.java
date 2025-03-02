@@ -12,7 +12,9 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -39,6 +41,17 @@ public class StatusAppUserController {
             return ResponseEntity.status(HttpStatus.OK).body(incidentListResp);
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+    }
+
+    @PostMapping("/incidents")
+    public ResponseEntity<String> postIncident(
+        @RequestBody IncidentDTO incidentDTO
+    ) {
+        boolean success = statusAppService.createIncident(incidentDTO);
+        if(success) {
+            return ResponseEntity.status(HttpStatus.CREATED).body("Success");
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failure");
     }
 
 }

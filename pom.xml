@@ -75,7 +75,6 @@
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct-processor</artifactId>
 			<version>1.5.5.Final</version>
-			<scope>annotationProcessor</scope>
 		</dependency>
 
 		<!-- Springdoc OpenAPI for Swagger UI -->

@@ -1,6 +1,6 @@
 package com.status_app.statusApp.dto;
 
-import org.bson.BsonTimestamp;
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -15,8 +15,8 @@ public class IncidentDTO {
 
     private String title;
 
-    private BsonTimestamp createdAt;
+    private LocalDateTime createdAt;
 
-    private BsonTimestamp closedAt;
+    private LocalDateTime closedAt;
 
 }

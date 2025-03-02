@@ -2,23 +2,23 @@ package com.status_app.statusApp.entity;
 
 import lombok.Data;
 
-import org.bson.BsonTimestamp;
+import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document("incidents")
 @Data
 public class IncidentEntity {
 
-    @MongoId
+    @Id
     private String id;
 
     private String serviceId;
 
     private String title;
 
-    private BsonTimestamp createdAt;
+    private LocalDateTime createdAt;
 
-    private BsonTimestamp closedAt;
+    private LocalDateTime closedAt;
 }
