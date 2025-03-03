@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = {"http://localhost:5173","https://service-status-tracker.netlify.app"})
 public class StatusAppUserController {
 
     @Autowired
